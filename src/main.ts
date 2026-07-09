@@ -4,18 +4,27 @@ import { ExpressAdapter } from '@nestjs/platform-express';
 import express from 'express';
 import serverlessExpress from '@codegenie/serverless-express';
 
-const server = express();
+const expressApp = express();
+
+let cachedServer: any;
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, new ExpressAdapter(server));
+  const app = await NestFactory.create(
+    AppModule,
+    new ExpressAdapter(expressApp),
+  );
+
   app.enableCors();
 
   await app.init();
 
-  await app.listen( 5000);
-
-
-  return serverlessExpress({ app: server });
+  return serverlessExpress({ app: expressApp });
 }
 
-export default bootstrap();
+export default async function handler(req: any, res: any) {
+  if (!cachedServer) {
+    cachedServer = await bootstrap();
+  }
+
+  return cachedServer(req, res);
+}
