@@ -12,6 +12,9 @@ async function bootstrap() {
 
   await app.init();
 
+  await app.listen( 5000);
+
+
   return serverlessExpress({ app: server });
 }
 
