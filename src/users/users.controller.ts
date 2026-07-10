@@ -14,7 +14,7 @@ import {
 import { UsersService } from './users.service';
 import { User } from './user.schema';
 import { AuthGuard } from '@nestjs/passport';
-import { LoggingInterceptor } from 'src/auth.interceptor';
+import { LoggingInterceptor } from 'src/auth.interceptor'; 
 
 @UseGuards(AuthGuard('jwt'))
 @Controller('users')
