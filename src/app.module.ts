@@ -19,6 +19,7 @@ import { LoggerMiddleware } from './logger.middleware';
 ),
     UsersModule,
     AuthRegisterModule,
+    AuthLoginModule
   ],
   controllers: [AppController],
   providers: [AppService],
