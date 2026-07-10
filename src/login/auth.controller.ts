@@ -14,12 +14,12 @@ export class AuthController {
     return this.authService.login(login);        
   }
 
-   @Post('register')
-  async register(@Body() body: any) {
-    console.log('Register payload:', body);
+  //  @Post('register')
+  // async register(@Body() body: any) {
+  //   console.log('Register payload:', body);
 
-    return this.authService.register(body);
-  }
+  //   return this.authService.register(body);
+  // }
 
   @Post('refresh')
   async refresh(
