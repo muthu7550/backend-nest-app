@@ -71,9 +71,11 @@ async filterUser(filterDto: any): Promise<User[]> {
   if (filterDto?.name) { 
     query.name = { $regex: filterDto.name, $options: 'i' };
   } 
+  
   if (filterDto?.email) {
     query.email = { $regex: filterDto.email, $options: 'i' };
   }
+
   if (filterDto?.phone) {
     query.phone = { $regex: filterDto.phone, $options: 'i' }; 
   }
