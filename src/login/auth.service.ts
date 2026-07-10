@@ -52,8 +52,11 @@ async refreshTokens(userId: string, incomingRefreshToken: string) {
   async login(userData: { email: string; password: string }) {
     const emailStr = userData?.email; 
     const passwordStr = userData?.password;
+    console.log(emailStr)
 
     const user = await this.authRegisterModule.findOne({ email: emailStr }).exec();
+
+    console.log(user,"fs")
 
     if (!user || user.password !== passwordStr) {
       throw new UnauthorizedException('Invalid email or password credentials');
