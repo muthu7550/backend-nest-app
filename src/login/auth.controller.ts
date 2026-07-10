@@ -18,7 +18,7 @@ export class AuthController {
   async register(@Body() body: any) {
     console.log('Register payload:', body);
 
-    return this.authService.Register(body);
+    return this.authService.register(body);
   }
 
   @Post('refresh')
