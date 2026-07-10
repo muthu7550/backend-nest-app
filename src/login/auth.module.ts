@@ -13,15 +13,14 @@ import { Register, RegisterSchema  } from "../register/register.schema";
 
 @Module({
   imports: [
-    PassportModule.register({
-      defaultStrategy: 'jwt',
-    }),
-
+    forwardRef(() => UsersModule),
+    PassportModule.register({ defaultStrategy: 'jwt' }),
+    // UsersModule,
+    PassportModule,
+    MongooseModule.forFeature([{ name: Register.name, schema: RegisterSchema  }]),
     JwtModule.register({
       secret: 'MY_SUPER_SECRET_KEY_123',
-      signOptions: {
-        expiresIn: '1m',
-      },
+      signOptions: { expiresIn: '1m' }, 
     }),
   ],
   controllers: [AuthController],
