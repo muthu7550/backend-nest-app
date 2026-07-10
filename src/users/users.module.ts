@@ -11,7 +11,6 @@ import { AuthLoginModule } from '../login/auth.module';
     MongooseModule.forFeature([
       { name: User.name, schema: UserSchema },  
     ]),
-    forwardRef(() => AuthLoginModule), 
   ],
   controllers: [UsersController],
   providers: [UsersService],

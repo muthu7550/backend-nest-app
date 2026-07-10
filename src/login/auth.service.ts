@@ -3,7 +3,7 @@ import { UsersModule } from './../users/users.module';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Register, registerUserDocument } from 'src/register/auth.schema';
+import { Register, registerUserDocument } from 'src/register/register.schema';
 import { JwtService } from '@nestjs/jwt';
 
 @Injectable()

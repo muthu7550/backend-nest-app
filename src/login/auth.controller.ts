@@ -1,4 +1,4 @@
-import { Register } from './../register/auth.schema';
+import { Register } from './../register/register.schema';
 // auth.controller.ts
 import { Body, Controller, Get, Post, UnauthorizedException } from '@nestjs/common';
 import { AuthService } from './auth.service';

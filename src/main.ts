@@ -7,7 +7,7 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:3000',
-      'https://front-end-ui-for-nest-app.vercel.app',
+      'https://front-end-ui-for-nest-gl1qiw9vs-muthu7550s-projects.vercel.app',
     ],
     methods: [
       'GET',

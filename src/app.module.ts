@@ -4,8 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { AuthLoginModule } from './login/auth.module';
-import { RegisterController } from './register/auth.controller';
-import { AuthRegisterModule } from './register/auth.module';
+import { RegisterController } from './register/register.controller';
+import { AuthRegisterModule } from './register/register.module';
 import { LoggerMiddleware } from './logger.middleware';
 
 
