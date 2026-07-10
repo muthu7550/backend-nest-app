@@ -11,7 +11,7 @@ import { LoggerMiddleware } from './logger.middleware';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(process.env.MONGODB_URI! || "mecmarimuthuit:marimuthu@cluster0.sfbeg.mongodb.net/jobportal?retryWrites=true&w=majorit"),
+    MongooseModule.forRoot("mongodb+srv://mecmarimuthuit:marimuthu@cluster0.sfbeg.mongodb.net/"),
     UsersModule,
     AuthRegisterModule,
   ],
