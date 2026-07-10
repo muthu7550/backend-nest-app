@@ -7,11 +7,10 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:3000',
-      'https://front-end-ui-for-nest-jmptgdrbb-muthu7550s-projects.vercel.app',
+      /^https:\/\/front-end-ui-for-nest.*\.vercel\.app$/,
     ],
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
   });
 
   await app.listen(process.env.PORT || 5000);
