@@ -1,3 +1,4 @@
+import { Register } from './../register/auth.schema';
 // auth.controller.ts
 import { Body, Controller, Get, Post, UnauthorizedException } from '@nestjs/common';
 import { AuthService } from './auth.service';
@@ -11,6 +12,13 @@ export class AuthController {
     console.log(login);
 
     return this.authService.login(login);        
+  }
+
+   @Post('register')
+  async register(@Body() body: any) {
+    console.log('Register payload:', body);
+
+    return this.authService.Register(body);
   }
 
   @Post('refresh')

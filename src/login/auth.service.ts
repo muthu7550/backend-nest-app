@@ -64,4 +64,25 @@ async refreshTokens(userId: string, incomingRefreshToken: string) {
 
     return await this.generateTokens(user);
   }
+
+  async register(userData: { email: string; password: string }) {
+
+  const existingUser = await this.authRegisterModule
+    .findOne({ email: userData.email })
+    .exec();
+
+  if (existingUser) {
+    throw new UnauthorizedException('Email already exists');
+  }
+
+  const user = await this.authRegisterModule.create({
+    email: userData.email,
+    password: userData.password,
+    role: 'user',
+  });
+
+  return await this.generateTokens(user);
 }
+}
+
+
