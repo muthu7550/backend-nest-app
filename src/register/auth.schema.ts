@@ -19,4 +19,4 @@ export class Register {
   refreshToken?: string; 
 }
 
-export const UserSchema = SchemaFactory.createForClass(Register);
+export const RegisterSchema = SchemaFactory.createForClass(Register);

@@ -14,13 +14,6 @@ export class AuthController {
     return this.authService.login(login);        
   }
 
-  //  @Post('register')
-  // async register(@Body() body: any) {
-  //   console.log('Register payload:', body);
-
-  //   return this.authService.register(body);
-  // }
-
   @Post('refresh')
   async refresh(
     @Body() body: { userId: string; refresh_token: string }

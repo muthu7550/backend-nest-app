@@ -3,14 +3,14 @@ import { AuthController } from './../login/auth.controller';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose'; 
 import { registerService } from './auth.service'; 
-import { Register, UserSchema } from './auth.schema'; 
+import { Register, RegisterSchema  } from './auth.schema'; 
 import { UsersModule } from '../users/users.module'; 
 import { RegisterController } from './auth.controller';
 
 @Module({
   imports: [
     UsersModule,
-    MongooseModule.forFeature([{ name: Register.name, schema: UserSchema }]),
+    MongooseModule.forFeature([{ name: Register.name, schema: RegisterSchema  }]),
   ], 
   controllers: [RegisterController],  
   providers: [registerService],

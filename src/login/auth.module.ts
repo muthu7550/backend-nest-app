@@ -9,7 +9,7 @@ import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { forwardRef } from '@nestjs/common';
 
-import { Register, UserSchema } from 'src/register/auth.schema';
+import { Register, RegisterSchema  } from "../register/auth.schema";
 
 @Module({
   imports: [
@@ -17,7 +17,7 @@ import { Register, UserSchema } from 'src/register/auth.schema';
     PassportModule.register({ defaultStrategy: 'jwt' }),
     // UsersModule,
     PassportModule,
-    MongooseModule.forFeature([{ name: Register.name, schema: UserSchema }]),
+    MongooseModule.forFeature([{ name: Register.name, schema: RegisterSchema  }]),
     JwtModule.register({
       secret: 'MY_SUPER_SECRET_KEY_123',
       signOptions: { expiresIn: '1m' }, 

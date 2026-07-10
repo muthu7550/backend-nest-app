@@ -11,7 +11,12 @@ import { LoggerMiddleware } from './logger.middleware';
 
 @Module({
   imports: [
-    MongooseModule.forRoot("mongodb+srv://mecmarimuthuit:marimuthu@cluster0.sfbeg.mongodb.net/my_users_db"),
+   MongooseModule.forRoot(
+ "mongodb+srv://mecmarimuthuit:marimuthu@cluster0.sfbeg.mongodb.net/my_users_db",
+ {
+   dbName: "my_users_db"
+ }
+),
     UsersModule,
     AuthRegisterModule,
   ],
