@@ -1,4 +1,5 @@
-import { Controller, Get, Post, Put } from '@nestjs/common';
+import { Controller, Get, Put, Res, HttpStatus } from '@nestjs/common';
+import type { Response } from 'express';
 import { AppService } from './app.service';
 
 @Controller()
@@ -10,8 +11,13 @@ export class AppController {
     return this.appService.getHello();
   }
 
-   @Put()
-  postHello(): string {
+  @Get('favicon.ico')
+  favicon(@Res() res: Response) {
+    return res.status(HttpStatus.NO_CONTENT).send();
+  }
+
+  @Put()
+  putHello(): string {
     return this.appService.getHello();
   }
 }
